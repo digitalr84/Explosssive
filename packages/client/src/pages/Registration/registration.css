@@ -1,0 +1,5 @@
+@import '../../variables.css';
+
+.registr {
+  background-color: var(--primary-blue);
+}

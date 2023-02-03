@@ -3,6 +3,10 @@ import './App.css'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 
+import { BrowserRouter } from 'react-router-dom'
+
+import { Route, Link, RouteComponentProps } from 'react-router-dom'
+
 const App: FC = () => {
   /*useEffect(() => {
     const fetchServerData = async () => {
@@ -29,6 +33,17 @@ const App: FC = () => {
         className="button_raspisnay"
         type="submit"></Button>
       <Input onChange={handleInput} name="email" value="wwwwww" />
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/users">Users</Link>
+        </li>
+      </ul>
     </div>
   )
 }
