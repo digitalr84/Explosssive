@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
-import { InputProps } from './types';
-import './input.css';
+import React, { FC } from 'react'
+import { InputProps } from './types'
+import './input.css'
 
 export const Input: FC<InputProps> = ({
   name,
   type = 'text',
   disabled = false,
   onChange,
-  className=''
+  className = '',
 }) => {
   return (
     <div className={`input-field`}>
@@ -19,5 +19,5 @@ export const Input: FC<InputProps> = ({
         disabled={disabled}
       />
     </div>
-  );
-};
+  )
+}
