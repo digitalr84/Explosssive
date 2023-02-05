@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import './registration.css'
 
 export const Registration: FC = () => {
-  const navigate = useNavigate()
-  useEffect(() => {
-    navigate('/')
-  }, [])
 
   return (
     <div className="registr">
