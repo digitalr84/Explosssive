@@ -1,0 +1,12 @@
+@import '../../variables.css';
+.button {
+  color: var(--primary-back);
+  border-radius: 30px;
+  padding: 10px;
+  border: none;
+  width: 250px;
+}
+
+.button_raspisnay {
+  background-color: var(--primary-blue);
+}
