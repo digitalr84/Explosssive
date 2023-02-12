@@ -1,7 +1,5 @@
-import { Play } from '../../components/Play';
+import { Play } from '../../components/Play'
 
 export const Game = () => {
-  return (
-    <Play />
-  );
-};
+  return <Play />
+}
