@@ -8,17 +8,15 @@ export const StartPage = () => {
 
   const handleButtonClick = useCallback(() => {
     console.log('Clicked event')
-    // navigate('/game')
     navigate('/registration')
   }, [navigate])
   const handleButtonClickCl = useCallback(() => {
     console.log('Clicked event')
     navigate('/login')
   }, [navigate])
-
-  const handleInput = useCallback((value: string) => {
-    console.log(value)
-  }, [])
+  const handleButtonGame = useCallback(() => {
+    navigate('/game')
+  }, [navigate])
 
   return (
     <div className="App">
@@ -26,12 +24,21 @@ export const StartPage = () => {
       <Button
         onClick={handleButtonClick}
         className="button_raspisnay"
-        type="submit"></Button>
+        type="submit">
+        Регестрация
+      </Button>
       <Button
         onClick={handleButtonClickCl}
         className="button_raspisnay"
-        type="submit"></Button>
-      <Input onChange={handleInput} name="email" value="wwwwww" />
+        type="submit">
+        Логин
+      </Button>
+      <Button
+        onClick={handleButtonGame}
+        className="button_raspisnay"
+        type="submit">
+        Игра
+      </Button>
     </div>
   )
 }
