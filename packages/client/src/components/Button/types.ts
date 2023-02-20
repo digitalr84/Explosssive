@@ -3,4 +3,5 @@ export interface Props {
   className?: string
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
+  children: ReactNode
 }
