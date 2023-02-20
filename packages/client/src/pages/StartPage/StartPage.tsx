@@ -8,7 +8,8 @@ export const StartPage = () => {
 
   const handleButtonClick = useCallback(() => {
     console.log('Clicked event')
-    navigate('/game')
+    // navigate('/game')
+    navigate('/registration')
   }, [navigate])
   const handleButtonClickCl = useCallback(() => {
     console.log('Clicked event')
