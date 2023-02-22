@@ -1,6 +1,6 @@
 @import '../../variables.css';
 .button {
-  color: var(--primary-back);
+  color: var(--primary-white);
   border-radius: 30px;
   padding: 10px;
   border: none;

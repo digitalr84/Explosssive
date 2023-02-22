@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Login, Registration, StartPage, Game } from '../../pages'
+import { Login, Registration, StartPage, Game, Profile } from '../../pages'
 
 export const Routing = () => {
   return (
@@ -8,6 +8,7 @@ export const Routing = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<StartPage />} />
       <Route path="/game" element={<Game />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   )
 }

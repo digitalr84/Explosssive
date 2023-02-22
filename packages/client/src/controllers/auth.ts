@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { mainFetch } from './mainFetch'
+import { UserInterface } from '../store/LoginBuilder'
 
 export type SigninData = {
   login: string
@@ -17,7 +18,16 @@ const Headers = {
   'content-type': 'application/json',
   mode: 'cors',
 }
-
+export const fetchAuth = createAsyncThunk(
+  'auth/fetchAuth',
+  async (_, thunkApi) => {
+    try {
+      return await mainFetch<UserInterface>('/auth/user', {})
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
 export const fetchSignin = createAsyncThunk(
   'auth/fetchSignin',
   async (data: SigninData, thunkApi) => {
