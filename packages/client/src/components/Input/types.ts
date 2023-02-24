@@ -7,5 +7,6 @@ export type InputProps = {
   type?: string
   name: string
   disabled?: boolean
+  label?: string
   className?: string
 }

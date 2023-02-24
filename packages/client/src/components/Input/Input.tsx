@@ -10,10 +10,12 @@ export const Input: FC<InputProps> = ({
   disabled = false,
   onBlur,
   onChange,
-  className = '',
+  className = 'def',
+  label,
 }) => {
   return (
     <div className={`input-field`}>
+      {label && <label className="label">{label}</label>}
       <input
         className={className}
         name={name}

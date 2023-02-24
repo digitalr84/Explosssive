@@ -73,3 +73,19 @@ export const fetchSignup = createAsyncThunk(
     }
   }
 )
+export const fetchAvatar = createAsyncThunk(
+  'auth/fetchChangeAvatar',
+  async (data: File, thunkApi) => {
+    try {
+      const avatar = new FormData()
+      avatar.append('avatar', data)
+      const res = await mainFetch('/user/profile/avatar', {
+        method: 'PUT',
+        body: avatar,
+      })
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
