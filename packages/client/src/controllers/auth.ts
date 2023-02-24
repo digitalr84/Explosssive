@@ -14,6 +14,11 @@ export type SignupData = {
   password: string
   phone: string
 }
+export type ChangePasswordType = {
+  oldPassword: string
+  newPassword: string
+}
+
 const Headers = {
   'content-type': 'application/json',
   mode: 'cors',
@@ -82,6 +87,21 @@ export const fetchAvatar = createAsyncThunk(
       const res = await mainFetch('/user/profile/avatar', {
         method: 'PUT',
         body: avatar,
+      })
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
+export const fetchPassword = createAsyncThunk(
+  'auth/fetchPassword',
+  async (data: ChangePasswordType, thunkApi) => {
+    try {
+      const res = await mainFetch('/user/password', {
+        method: 'PUT',
+        headers: Headers,
+        body: JSON.stringify(data),
       })
       return res
     } catch (e) {

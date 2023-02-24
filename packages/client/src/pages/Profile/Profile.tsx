@@ -9,6 +9,7 @@ import { useCallback } from 'react'
 import { Button } from '../../components/Button'
 
 export const Profile: FC = () => {
+  const navigate = useNavigate()
   const user = myAppSelector(state => state.auth.user as UserInterface)
   const dispath = myAppDispatch()
   const ref = useRef(null)
@@ -28,10 +29,10 @@ export const Profile: FC = () => {
     console.log(ref.current)
   }
   const handleButtonChangePassword = useCallback(() => {
-    // dispath(fetchAvatar(ref.current));
+    navigate('/password')
   }, [])
   const handleButtonChangeData = useCallback(() => {
-    // dispath(fetchAvatar(ref.current));
+    navigate('/changeprofile')
   }, [])
 
   return (
