@@ -34,7 +34,9 @@ export const Profile: FC = () => {
   const handleButtonChangeData = useCallback(() => {
     navigate('/changeprofile')
   }, [])
-
+  const handleButtonStartPage = useCallback(() => {
+    navigate('/')
+  }, [])
   return (
     <div>
       <p>{user && user.display_name}</p>
@@ -69,6 +71,12 @@ export const Profile: FC = () => {
         className="button_raspisnay"
         type="button">
         Сменить данные
+      </Button>
+      <Button
+        onClick={handleButtonStartPage}
+        className="button_raspisnay"
+        type="button">
+        На главную страницу
       </Button>
     </div>
   )

@@ -66,6 +66,7 @@ export const Login: FC = () => {
         </div>
       }>
       <Input
+        label="Логин"
         name="login"
         value={values.login}
         onChange={handleChange}
@@ -74,11 +75,11 @@ export const Login: FC = () => {
         error={errors.login}
       />
       <Input
+        label="Пароль"
         name="password"
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
-        className="regular"
         show={Boolean(errors.password) && Boolean(touched.password)}
         error={errors.password}
       />

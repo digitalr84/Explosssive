@@ -109,3 +109,18 @@ export const fetchPassword = createAsyncThunk(
     }
   }
 )
+export const fetchUser = createAsyncThunk(
+  'auth/fetchUser',
+  async (data: UserInterface, thunkApi) => {
+    try {
+      const res: UserInterface = await mainFetch('/user/profile', {
+        method: 'PUT',
+        headers: Headers,
+        body: JSON.stringify(data),
+      })
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)

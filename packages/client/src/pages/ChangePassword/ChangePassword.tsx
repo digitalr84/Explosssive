@@ -71,6 +71,7 @@ export const ChangePassword: FC = () => {
         </div>
       }>
       <Input
+        label="Пароль"
         name="oldpassword"
         value={values.oldpassword}
         onChange={handleChange}
@@ -79,6 +80,7 @@ export const ChangePassword: FC = () => {
         error={errors.oldpassword}
       />
       <Input
+        label="Новый пароль"
         name="password"
         value={values.password}
         onChange={handleChange}
@@ -87,6 +89,7 @@ export const ChangePassword: FC = () => {
         error={errors.password}
       />
       <Input
+        label="Повторите новый пароль"
         name="repeatPassword"
         value={values.repeatPassword}
         onChange={handleChange}
