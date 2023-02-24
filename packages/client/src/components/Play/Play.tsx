@@ -7,8 +7,8 @@ export const Play = () => {
 
   useEffect(() => {
     mygame.current = new MyGame(mycanvas.current as HTMLCanvasElement)
-    mygame.current.initial(()=>{
-      console.log('lets sweem');
+    mygame.current.initial(() => {
+      console.log('lets sweem')
     })
     return () => {
       mygame.current.stop()

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { mainFetch } from './mainFetch'
+import { UserInterface } from '../store/LoginBuilder'
 
 export type SigninData = {
   login: string
@@ -13,11 +14,25 @@ export type SignupData = {
   password: string
   phone: string
 }
+export type ChangePasswordType = {
+  oldPassword: string
+  newPassword: string
+}
+
 const Headers = {
   'content-type': 'application/json',
   mode: 'cors',
 }
-
+export const fetchAuth = createAsyncThunk(
+  'auth/fetchAuth',
+  async (_, thunkApi) => {
+    try {
+      return await mainFetch<UserInterface>('/auth/user', {})
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
 export const fetchSignin = createAsyncThunk(
   'auth/fetchSignin',
   async (data: SigninData, thunkApi) => {
@@ -59,6 +74,52 @@ export const fetchSignup = createAsyncThunk(
       })
       return res
     } catch (error) {
+      console.log(e)
+    }
+  }
+)
+export const fetchAvatar = createAsyncThunk(
+  'auth/fetchChangeAvatar',
+  async (data: File, thunkApi) => {
+    try {
+      const avatar = new FormData()
+      avatar.append('avatar', data)
+      const res = await mainFetch('/user/profile/avatar', {
+        method: 'PUT',
+        body: avatar,
+      })
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
+export const fetchPassword = createAsyncThunk(
+  'auth/fetchPassword',
+  async (data: ChangePasswordType, thunkApi) => {
+    try {
+      const res = await mainFetch('/user/password', {
+        method: 'PUT',
+        headers: Headers,
+        body: JSON.stringify(data),
+      })
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
+export const fetchUser = createAsyncThunk(
+  'auth/fetchUser',
+  async (data: UserInterface, thunkApi) => {
+    try {
+      const res: UserInterface = await mainFetch('/user/profile', {
+        method: 'PUT',
+        headers: Headers,
+        body: JSON.stringify(data),
+      })
+      return res
+    } catch (e) {
       console.log(e)
     }
   }

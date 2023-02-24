@@ -6,3 +6,10 @@
   padding: 5px;
   color: var(--primary-green);
 }
+.label {
+  position: relative;
+}
+.def {
+  border: none;
+  margin-left: 10px;
+}

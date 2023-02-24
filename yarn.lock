@@ -2749,11 +2749,13 @@
     "@types/react-redux" "7.1.25"
     "dotenv" "^16.0.2"
     "eslint-config-prettier" "^8.5.0"
+    "formik" "2.2.9"
     "prettier" "^2.7.1"
     "react" "^18.2.0"
     "react-dom" "^18.2.0"
     "react-redux" "8.0.5"
     "react-router-dom" "6.4.2"
+    "yup" "1.0.0"
 
 "cliui@^7.0.2":
   "integrity" "sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ=="

@@ -12,15 +12,13 @@ export const mainFetch = <T>(
     if (!res.ok) {
       return Promise.reject(res.status)
     }
-
     const searhPlain = res.headers.get('content-type')
-
-    console.log(searhPlain)
-
     if (searhPlain.indexOf('text/plain') != -1) {
       return res.text()
     }
-
+    if (searhPlain && searhPlain.indexOf('application/json') !== -1) {
+      return res.json()
+    }
     return res
   })
 }

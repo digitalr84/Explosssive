@@ -6,7 +6,6 @@ const rootReducer = combineReducers({
 })
 
 export const setupStore = () => {
-  console.log(4444)
   return configureStore({
     reducer: rootReducer,
   })
@@ -14,3 +13,4 @@ export const setupStore = () => {
 
 export type AppStore = ReturnType<typeof setupStore>
 export type AppDispatch = AppStore['dispatch']
+export type RootStore = ReturnType<typeof rootReducer>

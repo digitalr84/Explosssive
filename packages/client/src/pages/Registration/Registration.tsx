@@ -72,6 +72,7 @@ export const Registration: FC = () => {
         </div>
       }>
       <Input
+        label="Логин"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.login) && Boolean(touched.login)}
@@ -80,6 +81,7 @@ export const Registration: FC = () => {
         value={values.login}
       />
       <Input
+        label="Ваше имя"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.first_name) && Boolean(touched.first_name)}
@@ -88,6 +90,7 @@ export const Registration: FC = () => {
         value={values.first_name}
       />
       <Input
+        label="Ваша фамилия"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.second_name) && Boolean(touched.second_name)}
@@ -96,6 +99,7 @@ export const Registration: FC = () => {
         value={values.second_name}
       />
       <Input
+        label="А телефончик"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.phone) && Boolean(touched.phone)}
@@ -104,6 +108,7 @@ export const Registration: FC = () => {
         value={values.phone}
       />
       <Input
+        label="Почта"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.email) && Boolean(touched.email)}
@@ -112,6 +117,7 @@ export const Registration: FC = () => {
         value={values.email}
       />
       <Input
+        label="Пароль"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.password) && Boolean(touched.password)}
@@ -120,6 +126,7 @@ export const Registration: FC = () => {
         value={values.password}
       />
       <Input
+        label="Повторите пароль"
         onChange={handleChange}
         onBlur={handleBlur}
         show={Boolean(errors.repeatPassword) && Boolean(touched.repeatPassword)}

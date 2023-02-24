@@ -17,6 +17,9 @@ export const StartPage = () => {
   const handleButtonGame = useCallback(() => {
     navigate('/game')
   }, [navigate])
+  const handleButtonProfile = useCallback(() => {
+    navigate('/profile')
+  }, [navigate])
 
   return (
     <div className="App">
@@ -38,6 +41,12 @@ export const StartPage = () => {
         className="button_raspisnay"
         type="submit">
         Игра
+      </Button>
+      <Button
+        onClick={handleButtonProfile}
+        className="button_raspisnay"
+        type="submit">
+        Профиль
       </Button>
     </div>
   )
