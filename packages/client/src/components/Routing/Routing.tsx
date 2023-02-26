@@ -7,6 +7,7 @@ import {
   Profile,
   ChangePassword,
   ChangeProfile,
+  Leader,
 } from '../../pages'
 
 export const Routing = () => {
@@ -18,6 +19,7 @@ export const Routing = () => {
       <Route path="/game" element={<Game />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/password" element={<ChangePassword />} />
+      <Route path="/leader" element={<Leader />} />
       <Route path="/changeprofile" element={<ChangeProfile />} />
     </Routes>
   )
