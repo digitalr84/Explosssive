@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { mainFetch } from './mainFetch'
 import { UserInterface } from '../store/LoginBuilder'
 
+//#region
 export type SigninData = {
   login: string
   password: string
@@ -124,3 +125,60 @@ export const fetchUser = createAsyncThunk(
     }
   }
 )
+//#endregion
+
+interface receive {
+  ratingFieldName: string
+  cursor: number
+  limit: number
+}
+interface Leader {
+  data: {
+    ['bubble']: number
+    user: string
+  }
+}
+export const takeLeader = createAsyncThunk<Leader[], receive>(
+  'leaderboard/all',
+  async (data: receive, thunkApi) => {
+    try {
+      console.log(data)
+      const res = await mainFetch<Leader[]>('/leaderboard/all', {
+        method: 'POST',
+        headers: Headers,
+        credentials: 'include',
+        body: JSON.stringify(data),
+      })
+      console.log(res)
+      return res
+    } catch (e) {
+      console.log(e)
+    }
+  }
+)
+
+export const newLeader = createAsyncThunk<
+  Leader[],
+  number,
+  { state: RootState }
+>('leaderboard/score', async (score, thunkApi) => {
+  const state = thunkApi.getState()
+  const login = state.auth.user.login
+  const message = {
+    data: { ['bubble']: score, user: login },
+    teamName: 'resistace',
+    ratingFieldName: 'bubble',
+  }
+  console.log(message)
+  try {
+    const send = await mainFetch<Leader[]>('/leaderboard', {
+      method: 'POST',
+      headers: Headers,
+      credentials: 'include',
+      body: JSON.stringify(message),
+    })
+    console.log(send)
+  } catch (e) {
+    console.log(e)
+  }
+})

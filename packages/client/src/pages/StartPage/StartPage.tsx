@@ -20,7 +20,9 @@ export const StartPage = () => {
   const handleButtonProfile = useCallback(() => {
     navigate('/profile')
   }, [navigate])
-
+  const handleButtonLeader = useCallback(() => {
+    navigate('/leader')
+  }, [navigate])
   return (
     <div className="App">
       <h1>Вот тут будет жить ваше приложение :)</h1>
@@ -47,6 +49,12 @@ export const StartPage = () => {
         className="button_raspisnay"
         type="submit">
         Профиль
+      </Button>
+      <Button
+        onClick={handleButtonLeader}
+        className="button_raspisnay"
+        type="submit">
+        Успешные успешники
       </Button>
     </div>
   )
