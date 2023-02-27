@@ -8,4 +8,8 @@ export default {
   globals: {
     __SERVER_PORT__: process.env.SERVER_PORT,
   },
+  moduleNameMapper: {
+    '\\.(css|scss|png)$': 'identity-obj-proxy',
+    '^src/(.*)$': '<rootDir>/src/$1',
+  },
 }

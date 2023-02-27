@@ -1,5 +1,5 @@
 export interface Props {
-  onClick: () => void
+  onClick?: () => void
   className?: string
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean

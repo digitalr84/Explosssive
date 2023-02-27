@@ -1,11 +1,10 @@
-import React, { FC, useRef } from 'react'
+import React, { FC, useRef, useCallback } from 'react'
 import { myAppSelector } from '../../myhooks/redux'
 import { useNavigate } from 'react-router-dom'
 import { UserInterface } from '../../store/LoginBuilder'
 import { myAppDispatch } from '../../myhooks/redux'
 import { takeLeader, newLeader } from '../../controllers/auth'
 
-import { useCallback } from 'react'
 import { Button } from '../../components/Button'
 
 export const Leader: FC = () => {
