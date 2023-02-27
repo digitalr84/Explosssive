@@ -23,6 +23,9 @@ export const StartPage = () => {
   const handleButtonLeader = useCallback(() => {
     navigate('/leader')
   }, [navigate])
+  const handleButtonForum = useCallback(() => {
+    navigate('/forum')
+  }, [navigate])
   return (
     <div className="App">
       <h1>Вот тут будет жить ваше приложение :)</h1>
@@ -55,6 +58,12 @@ export const StartPage = () => {
         className="button_raspisnay"
         type="submit">
         Успешные успешники
+      </Button>
+      <Button
+        onClick={handleButtonForum}
+        className="button_raspisnay"
+        type="submit">
+        Forum
       </Button>
     </div>
   )

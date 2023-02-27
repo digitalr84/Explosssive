@@ -6,6 +6,7 @@ import { Game } from './Game'
 import { ChangePassword } from './ChangePassword'
 import { ChangeProfile } from './ChangeProfile'
 import { Leader } from './Leader'
+import { Forum } from './Forum'
 export {
   Login,
   Registration,
@@ -15,4 +16,5 @@ export {
   ChangePassword,
   Leader,
   ChangeProfile,
+  Forum,
 }
