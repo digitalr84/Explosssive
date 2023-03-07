@@ -1,0 +1,15 @@
+@import '../../variables.css';
+.input-field {
+  border: none;
+  border-bottom: solid 1px;
+  margin-bottom: 3px;
+  padding: 5px;
+  color: var(--primary-green);
+}
+.label {
+  position: relative;
+}
+.def {
+  border: none;
+  margin-left: 10px;
+}
